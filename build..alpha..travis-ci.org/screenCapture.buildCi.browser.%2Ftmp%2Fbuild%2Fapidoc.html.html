@@ -1,0 +1,1730 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/langpavel/node-pg-async#readme">pg-async (v2.4.3)</a>
+</h1>
+<h4>PostgreSQL client for node.js designed for usage with ES7 async/await based on node-postgres (pg) module</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async">module pg-async</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL">
+            function <span class="apidocSignatureSpan">pg-async.</span>SQL
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.default">
+            function <span class="apidocSignatureSpan">pg-async.</span>default
+            <span class="apidocSignatureSpan">(connectionOptions, driver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.identifier">
+            function <span class="apidocSignatureSpan">pg-async.</span>identifier
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.literal">
+            function <span class="apidocSignatureSpan">pg-async.</span>literal
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sqlStr">
+            function <span class="apidocSignatureSpan">pg-async.</span>sqlStr
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.</span>SQL._transforms</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.</span>makeAsyncApi</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.</span>sql</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.SQL">module pg-async.SQL</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL.SQL">
+            function <span class="apidocSignatureSpan">pg-async.</span>SQL
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL.registerTransform">
+            function <span class="apidocSignatureSpan">pg-async.SQL.</span>registerTransform
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL.transform">
+            function <span class="apidocSignatureSpan">pg-async.SQL.</span>transform
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.SQL.</span>DEFAULT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.SQL.</span>NULL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pg-async.SQL.</span>_transforms</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.SQL._transforms">module pg-async.SQL._transforms</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.id">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>id
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.ident">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>ident
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.identifier">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>identifier
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.insert">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>insert
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.insert_object">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>insert_object
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.literal">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>literal
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.name">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>name
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.SQL._transforms.raw">
+            function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>raw
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.debug">module pg-async.debug</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.debug.default">
+            function <span class="apidocSignatureSpan">pg-async.debug.</span>default
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.default">module pg-async.default</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.default.default">
+            function <span class="apidocSignatureSpan">pg-async.</span>default
+            <span class="apidocSignatureSpan">(connectionOptions, driver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.default.SQL">
+            function <span class="apidocSignatureSpan">pg-async.default.</span>SQL
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.makeAsyncApi">module pg-async.makeAsyncApi</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.makeAsyncApi.default">
+            function <span class="apidocSignatureSpan">pg-async.makeAsyncApi.</span>default
+            <span class="apidocSignatureSpan">(sql)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pg-async.sql">module pg-async.sql</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.SqlFragment">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>SqlFragment
+            <span class="apidocSignatureSpan">(templateParts, templateValues)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.default">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>default
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.escapeIdentifier">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>escapeIdentifier
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.escapeLiteral">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>escapeLiteral
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.identifier">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>identifier
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.insert_object">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>insert_object
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.literal">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>literal
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pg-async.sql.sqlStr">
+            function <span class="apidocSignatureSpan">pg-async.sql.</span>sqlStr
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async" id="apidoc.module.pg-async">module pg-async</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL" id="apidoc.element.pg-async.SQL">
+        function <span class="apidocSignatureSpan">pg-async.</span>SQL
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SQL(parts) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  // eslint-disable-line prefer-const
+  // only one argument, called manually
+  if (!Array.isArray(parts) &amp;&amp; values.length === 0) {
+    if (parts instanceof SqlFragment) return parts;
+
+    parts = [parts];
+  }
+
+  return new SqlFragment(parts, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.default" id="apidoc.element.pg-async.default">
+        function <span class="apidocSignatureSpan">pg-async.</span>default
+        <span class="apidocSignatureSpan">(connectionOptions, driver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class PgAsync {
+  constructor(connectionOptions, driver) {
+    this.SQL = _sql2.default;
+
+    this.closeConnections = () =&gt; this.getDriver().end();
+
+    this.setConnectionOptions(connectionOptions);
+    this.setDriver(driver);
+
+    const self = this;
+    const wrap = name =&gt; {
+      self[name] = function (sql) {
+        for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+          values[_key - 1] = arguments[_key];
+        }
+
+        return self.connect(client =&gt; client[`${ name }Args`](sql, values));
+      };
+    };
+    const wrapArgs = name =&gt; {
+      self[name] = (sql, values) =&gt; self.connect(client =&gt; client[name](sql, values));
+    };
+
+    wrap('query');
+    wrapArgs('queryArgs');
+
+    wrap('rows');
+    wrapArgs('rowsArgs');
+
+    wrap('row');
+    wrapArgs('rowArgs');
+
+    wrap('value');
+    wrapArgs('valueArgs');
+  }
+
+  setConnectionOptions(options) {
+    this._connectionOptions = options;
+    return this;
+  }
+
+  getConnectionOptions() {
+    return this._connectionOptions || this.getDriver().defaults;
+  }
+
+  getDriver() {
+    return this._driver;
+  }
+
+  setDriver(driver) {
+    if (typeof driver === 'string') switch (driver) {
+      case '':case 'pg':
+        driver = _pg2.default;
+        break;
+      case 'native':case 'pg.native':
+        driver = _pg2.default.native;
+        break;
+      default:
+        throw new Error(`Unrecognized driver name: ${ driver }`);
+    }
+    this._driver = driver || _pg2.default;
+    return this;
+  }
+
+  getClient() {
+    var _this = this;
+
+    return _asyncToGenerator(function* () {
+      return new _bluebird2.default(function (resolve, reject) {
+        _this.getDriver().connect(_this.getConnectionOptions(), function (err, client, _done) {
+          if (err) {
+            (0, _debug2.default)('%s getClient(%j)', err, _this.getConnectionOptions());
+            if (_done) _done(err);
+            return reject(err);
+          }
+          return resolve({
+            client: client,
+            done: function done() {
+              (0, _debug2.default)('Client released');
+              _done();
+            }
+          });
+        });
+      });
+    })();
+  }
+
+  connect(asyncFunc) {
+    var _this2 = this;
+
+    return _asyncToGenerator(function* () {
+      checkAsyncFunction(asyncFunc);
+
+      var _ref = yield _this2.getClient();
+
+      const client = _ref.client,
+            done = _ref.done;
+
+      try {
+        const api = (0, _makeAsyncApi2.default)(client);
+        const result = yield asyncFunc(api);
+        yield api._end();
+        done();
+        return result;
+      } catch (err) {
+        done(err);
+        throw err;
+      }
+    })();
+  }
+
+  transaction(asyncFunc) {
+    var _this3 = this;
+
+    return _asyncToGenerator(function* () {
+      checkAsyncFunction(asyncFunc);
+
+      return yield _this3.connect((() =&gt; {
+        var _ref2 = _asyncToGenerator(function* (client) {
+          client.checkSerialAccess = true;
+          yield client.startTransaction();
+          try {
+            const result = yield asyncFunc(client);
+            yield client.commit();
+            return result;
+          } catch (err) {
+            try {
+              yield client.rollback();
+            } catch (_) {
+              // client disconnected?
+            }
+            throw err;
+          }
+        });
+
+        return function (_x) {
+          return _ref2.apply(this, arguments);
+        };
+      })());
+    })();
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _sql = require('./sql');
+
+var _sql2 = _interopRequireDefault(_sql);
+
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new _bluebird2.<span class="apidocCodeKeywordSpan
+">default</span>(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; }
+catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return _bluebird2.default.resolve(value).then
+(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next
+"); }); }; }
+
+const makeAsyncApi = client =&gt; {
+
+let inQuery = false;
+
+function query(sql) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.identifier" id="apidoc.element.pg-async.identifier">
+        function <span class="apidocSignatureSpan">pg-async.</span>identifier
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.literal" id="apidoc.element.pg-async.literal">
+        function <span class="apidocSignatureSpan">pg-async.</span>literal
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function literal(value) {
+  if (value instanceof SqlFragment) return value;
+
+  if (typeof value === 'undefined') throw new Error(`Expected something, but got undefined.`);
+
+  if (value === null) return SQL.NULL;
+
+  if (value.toPostgres) return SQL(escapeLiteral(value.toPostgres(_utils.prepareValue)));
+
+  if (value.toSQL) return SQL(value.toSQL());
+
+  return SQL(escapeLiteral(value.toString()));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sqlStr" id="apidoc.element.pg-async.sqlStr">
+        function <span class="apidocSignatureSpan">pg-async.</span>sqlStr
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sqlStr(str) {
+  if (typeof str !== 'string') throw new Error(`Expected string, got ${ (0, _util.inspect)(str) }`);
+
+  return SQL(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.SQL" id="apidoc.module.pg-async.SQL">module pg-async.SQL</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL.SQL" id="apidoc.element.pg-async.SQL.SQL">
+        function <span class="apidocSignatureSpan">pg-async.</span>SQL
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SQL(parts) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  // eslint-disable-line prefer-const
+  // only one argument, called manually
+  if (!Array.isArray(parts) &amp;&amp; values.length === 0) {
+    if (parts instanceof SqlFragment) return parts;
+
+    parts = [parts];
+  }
+
+  return new SqlFragment(parts, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL.registerTransform" id="apidoc.element.pg-async.SQL.registerTransform">
+        function <span class="apidocSignatureSpan">pg-async.SQL.</span>registerTransform
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerTransform = function () {
+  for (var _len2 = arguments.length, names = Array(_len2), _key2 = 0; _key2 &lt; _len2; _key2++) {
+    names[_key2] = arguments[_key2];
+  }
+
+  const transform = names.pop();
+  if (typeof transform !== 'function') throw new Error('Last argument must be a function');
+
+  const transforms = SQL._transforms;
+  for (let i = 0; i &lt; names.length; i++) {
+    const name = names[i].trim().toLowerCase();
+    if (transforms[name] &amp;&amp; transforms[name] !== transform) throw new Error(`Transform ${ name } already registered`);
+    transforms[names[i].toLowerCase()] = transform;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  sb[sb.length - 1] = ') VALUES (';
+  sqlFragments[0] = sb.join('');
+  sqlFragments[i] = ')';
+
+  return new SqlFragment(sqlFragments, values);
+}
+
+SQL.<span class="apidocCodeKeywordSpan">registerTransform</span>('id', 'ident', 'identifier', '
+;name', identifier);
+SQL.registerTransform('', 'literal', literal);
+SQL.registerTransform('!', 'raw', sqlStr);
+SQL.registerTransform('insert_object', 'insert', insert_object);
+
+exports.default = SQL;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL.transform" id="apidoc.element.pg-async.SQL.transform">
+        function <span class="apidocSignatureSpan">pg-async.SQL.</span>transform
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(name, value) =&gt; {
+  name = name.trim().toLowerCase();
+  const transform = SQL._transforms[name];
+  if (!transform) throw new Error(`Unknown transform: "${ name }"`);
+  return transform(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+
+    while (i &lt; length) {
+const parts = templateParts[i].split('$');
+let value = templateValues.shift();
+if (typeof value === 'undefined') throw new Error(`Expected something, but got undefined. ` + `Value after SQL fragment
+: ${ text.join('') }${ templateParts[i] }`);
+
+while (parts.length &gt; 1) value = SQL.<span class="apidocCodeKeywordSpan">transform</span>(parts.pop(), value);
+
+addText(parts[0]);
+
+if (value &amp;&amp; value.toSQL) value = value.toSQL();
+
+if (value instanceof SqlFragment) {
+  const nestedValuesLength = value.values.length;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.SQL._transforms" id="apidoc.module.pg-async.SQL._transforms">module pg-async.SQL._transforms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.id" id="apidoc.element.pg-async.SQL._transforms.id">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>id
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.ident" id="apidoc.element.pg-async.SQL._transforms.ident">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>ident
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.identifier" id="apidoc.element.pg-async.SQL._transforms.identifier">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>identifier
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.insert" id="apidoc.element.pg-async.SQL._transforms.insert">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>insert
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function insert_object(data) {
+  const keys = Object.keys(data);
+  const length = keys.length;
+  const sqlFragments = new Array(length);
+  const values = new Array(length - 1);
+  const sb = [];
+
+  sb.push('(');
+  let i = 0;
+  while (i &lt; length) {
+    const column = keys[i];
+    values[i] = data[column];
+    i++;
+    sb.push(escapeIdentifier(column), ',');
+    sqlFragments[i] = ',';
+  }
+  sb[sb.length - 1] = ') VALUES (';
+  sqlFragments[0] = sb.join('');
+  sqlFragments[i] = ')';
+
+  return new SqlFragment(sqlFragments, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.insert_object" id="apidoc.element.pg-async.SQL._transforms.insert_object">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>insert_object
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function insert_object(data) {
+  const keys = Object.keys(data);
+  const length = keys.length;
+  const sqlFragments = new Array(length);
+  const values = new Array(length - 1);
+  const sb = [];
+
+  sb.push('(');
+  let i = 0;
+  while (i &lt; length) {
+    const column = keys[i];
+    values[i] = data[column];
+    i++;
+    sb.push(escapeIdentifier(column), ',');
+    sqlFragments[i] = ',';
+  }
+  sb[sb.length - 1] = ') VALUES (';
+  sqlFragments[0] = sb.join('');
+  sqlFragments[i] = ')';
+
+  return new SqlFragment(sqlFragments, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.literal" id="apidoc.element.pg-async.SQL._transforms.literal">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>literal
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function literal(value) {
+  if (value instanceof SqlFragment) return value;
+
+  if (typeof value === 'undefined') throw new Error(`Expected something, but got undefined.`);
+
+  if (value === null) return SQL.NULL;
+
+  if (value.toPostgres) return SQL(escapeLiteral(value.toPostgres(_utils.prepareValue)));
+
+  if (value.toSQL) return SQL(value.toSQL());
+
+  return SQL(escapeLiteral(value.toString()));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.name" id="apidoc.element.pg-async.SQL._transforms.name">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>name
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.SQL._transforms.raw" id="apidoc.element.pg-async.SQL._transforms.raw">
+        function <span class="apidocSignatureSpan">pg-async.SQL._transforms.</span>raw
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sqlStr(str) {
+  if (typeof str !== 'string') throw new Error(`Expected string, got ${ (0, _util.inspect)(str) }`);
+
+  return SQL(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.debug" id="apidoc.module.pg-async.debug">module pg-async.debug</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.debug.default" id="apidoc.element.pg-async.debug.default">
+        function <span class="apidocSignatureSpan">pg-async.debug.</span>default
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function debug() {
+  // disabled?
+  if (!debug.enabled) return;
+
+  var self = debug;
+
+  // set `diff` timestamp
+  var curr = +new Date();
+  var ms = curr - (prevTime || curr);
+  self.diff = ms;
+  self.prev = prevTime;
+  self.curr = curr;
+  prevTime = curr;
+
+  // turn the `arguments` into a proper Array
+  var args = new Array(arguments.length);
+  for (var i = 0; i &lt; args.length; i++) {
+    args[i] = arguments[i];
+  }
+
+  args[0] = exports.coerce(args[0]);
+
+  if ('string' !== typeof args[0]) {
+    // anything else let's inspect with %O
+    args.unshift('%O');
+  }
+
+  // apply any `formatters` transformations
+  var index = 0;
+  args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+    // if we encounter an escaped % then don't increase the array index
+    if (match === '%%') return match;
+    index++;
+    var formatter = exports.formatters[format];
+    if ('function' === typeof formatter) {
+      var val = args[index];
+      match = formatter.call(self, val);
+
+      // now we need to remove `args[index]` since it's inlined in the `format`
+      args.splice(index, 1);
+      index--;
+    }
+    return match;
+  });
+
+  // apply env-specific formatting (colors, etc.)
+  exports.formatArgs.call(self, args);
+
+  var logFn = debug.log || exports.log || console.log.bind(console);
+  logFn.apply(self, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _sql = require('./sql');
+
+var _sql2 = _interopRequireDefault(_sql);
+
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new _bluebird2.<span class="apidocCodeKeywordSpan
+">default</span>(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; }
+catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return _bluebird2.default.resolve(value).then
+(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next
+"); }); }; }
+
+const makeAsyncApi = client =&gt; {
+
+let inQuery = false;
+
+function query(sql) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.default" id="apidoc.module.pg-async.default">module pg-async.default</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.default.default" id="apidoc.element.pg-async.default.default">
+        function <span class="apidocSignatureSpan">pg-async.</span>default
+        <span class="apidocSignatureSpan">(connectionOptions, driver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class PgAsync {
+  constructor(connectionOptions, driver) {
+    this.SQL = _sql2.default;
+
+    this.closeConnections = () =&gt; this.getDriver().end();
+
+    this.setConnectionOptions(connectionOptions);
+    this.setDriver(driver);
+
+    const self = this;
+    const wrap = name =&gt; {
+      self[name] = function (sql) {
+        for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+          values[_key - 1] = arguments[_key];
+        }
+
+        return self.connect(client =&gt; client[`${ name }Args`](sql, values));
+      };
+    };
+    const wrapArgs = name =&gt; {
+      self[name] = (sql, values) =&gt; self.connect(client =&gt; client[name](sql, values));
+    };
+
+    wrap('query');
+    wrapArgs('queryArgs');
+
+    wrap('rows');
+    wrapArgs('rowsArgs');
+
+    wrap('row');
+    wrapArgs('rowArgs');
+
+    wrap('value');
+    wrapArgs('valueArgs');
+  }
+
+  setConnectionOptions(options) {
+    this._connectionOptions = options;
+    return this;
+  }
+
+  getConnectionOptions() {
+    return this._connectionOptions || this.getDriver().defaults;
+  }
+
+  getDriver() {
+    return this._driver;
+  }
+
+  setDriver(driver) {
+    if (typeof driver === 'string') switch (driver) {
+      case '':case 'pg':
+        driver = _pg2.default;
+        break;
+      case 'native':case 'pg.native':
+        driver = _pg2.default.native;
+        break;
+      default:
+        throw new Error(`Unrecognized driver name: ${ driver }`);
+    }
+    this._driver = driver || _pg2.default;
+    return this;
+  }
+
+  getClient() {
+    var _this = this;
+
+    return _asyncToGenerator(function* () {
+      return new _bluebird2.default(function (resolve, reject) {
+        _this.getDriver().connect(_this.getConnectionOptions(), function (err, client, _done) {
+          if (err) {
+            (0, _debug2.default)('%s getClient(%j)', err, _this.getConnectionOptions());
+            if (_done) _done(err);
+            return reject(err);
+          }
+          return resolve({
+            client: client,
+            done: function done() {
+              (0, _debug2.default)('Client released');
+              _done();
+            }
+          });
+        });
+      });
+    })();
+  }
+
+  connect(asyncFunc) {
+    var _this2 = this;
+
+    return _asyncToGenerator(function* () {
+      checkAsyncFunction(asyncFunc);
+
+      var _ref = yield _this2.getClient();
+
+      const client = _ref.client,
+            done = _ref.done;
+
+      try {
+        const api = (0, _makeAsyncApi2.default)(client);
+        const result = yield asyncFunc(api);
+        yield api._end();
+        done();
+        return result;
+      } catch (err) {
+        done(err);
+        throw err;
+      }
+    })();
+  }
+
+  transaction(asyncFunc) {
+    var _this3 = this;
+
+    return _asyncToGenerator(function* () {
+      checkAsyncFunction(asyncFunc);
+
+      return yield _this3.connect((() =&gt; {
+        var _ref2 = _asyncToGenerator(function* (client) {
+          client.checkSerialAccess = true;
+          yield client.startTransaction();
+          try {
+            const result = yield asyncFunc(client);
+            yield client.commit();
+            return result;
+          } catch (err) {
+            try {
+              yield client.rollback();
+            } catch (_) {
+              // client disconnected?
+            }
+            throw err;
+          }
+        });
+
+        return function (_x) {
+          return _ref2.apply(this, arguments);
+        };
+      })());
+    })();
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _sql = require('./sql');
+
+var _sql2 = _interopRequireDefault(_sql);
+
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new _bluebird2.<span class="apidocCodeKeywordSpan
+">default</span>(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; }
+catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return _bluebird2.default.resolve(value).then
+(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next
+"); }); }; }
+
+const makeAsyncApi = client =&gt; {
+
+let inQuery = false;
+
+function query(sql) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.default.SQL" id="apidoc.element.pg-async.default.SQL">
+        function <span class="apidocSignatureSpan">pg-async.default.</span>SQL
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SQL(parts) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  // eslint-disable-line prefer-const
+  // only one argument, called manually
+  if (!Array.isArray(parts) &amp;&amp; values.length === 0) {
+    if (parts instanceof SqlFragment) return parts;
+
+    parts = [parts];
+  }
+
+  return new SqlFragment(parts, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.makeAsyncApi" id="apidoc.module.pg-async.makeAsyncApi">module pg-async.makeAsyncApi</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.makeAsyncApi.default" id="apidoc.element.pg-async.makeAsyncApi.default">
+        function <span class="apidocSignatureSpan">pg-async.makeAsyncApi.</span>default
+        <span class="apidocSignatureSpan">(sql)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">client =&gt; {
+
+  let inQuery = false;
+
+  function query(sql) {
+    for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+      values[_key - 1] = arguments[_key];
+    }
+
+    return query.queryArgs(sql, values);
+  }
+
+  let _queryArgs = (sql, values) =&gt; {
+    if (sql instanceof _sql.SqlFragment) {
+      values = sql.values;
+      sql = sql.text;
+    }
+
+    inQuery = true;
+    return new _bluebird2.default((resolve, reject) =&gt; {
+      (0, _debug2.default)('query params: %s query: %j', JSON.stringify(values).slice(0, 60), sql);
+      client.query(sql, values, (err, result) =&gt; {
+        inQuery = false;
+        if (err) {
+          (0, _debug2.default)('%s query(%j, %j)', err, sql, values);
+          return reject(err);
+        }
+        (0, _debug2.default)('query ok: %d rows', result.rowCount);
+        return resolve(result);
+      });
+    });
+  };
+
+  query.SQL = _sql2.default;
+
+  query.query = function (sql) {
+    for (var _len2 = arguments.length, values = Array(_len2 &gt; 1 ? _len2 - 1 : 0), _key2 = 1; _key2 &lt; _len2; _key2++) {
+      values[_key2 - 1] = arguments[_key2];
+    }
+
+    return query.queryArgs(sql, values);
+  };
+  query.queryArgs = (sql, values) =&gt; {
+    if (inQuery) throw new Error('Commands on same client should be called serially. ' + 'Do you forget `await`?');
+    return _queryArgs(sql, values);
+  };
+
+  query.rows = function (sql) {
+    for (var _len3 = arguments.length, values = Array(_len3 &gt; 1 ? _len3 - 1 : 0), _key3 = 1; _key3 &lt; _len3; _key3++) {
+      values[_key3 - 1] = arguments[_key3];
+    }
+
+    return query.rowsArgs(sql, values);
+  };
+  query.rowsArgs = (sql, values) =&gt; query.queryArgs(sql, values).then(r =&gt; r.rows);
+
+  query.row = function (sql) {
+    for (var _len4 = arguments.length, values = Array(_len4 &gt; 1 ? _len4 - 1 : 0), _key4 = 1; _key4 &lt; _len4; _key4++) {
+      values[_key4 - 1] = arguments[_key4];
+    }
+
+    return query.rowArgs(sql, values);
+  };
+  query.rowArgs = (() =&gt; {
+    var _ref = _asyncToGenerator(function* (sql, values) {
+      const result = yield query.queryArgs(sql, values);
+      if (result.rowCount !== 1) throw new Error(`SQL: Expected exactly one row result but ${ result.rowCount } returned`);
+      return result.rows[0];
+    });
+
+    return function (_x, _x2) {
+      return _ref.apply(this, arguments);
+    };
+  })();
+
+  query.value = (() =&gt; {
+    var _ref2 = _asyncToGenerator(function* (sql) {
+      for (var _len5 = arguments.length, values = Array(_len5 &gt; 1 ? _len5 - 1 : 0), _key5 = 1; _key5 &lt; _len5; _key5++) {
+        values[_key5 - 1] = arguments[_key5];
+      }
+
+      return query.valueArgs(sql, values);
+    });
+
+    return function (_x3) {
+      return _ref2.apply(this, arguments);
+    };
+  })();
+  query.valueArgs = (() =&gt; {
+    var _ref3 = _asyncToGenerator(function* (sql, values) {
+      let opts;
+      if (sql instanceof _sql.SqlFragment) {
+        opts = _extends({}, sql, {
+          rowMode: 'array'
+        });
+        values = sql.values;
+      } else {
+        opts = typeof sql === 'string' ? { text: sql, rowMode: 'array' } : _extends({}, sql, { rowMode: 'array' });
+      }
+
+      const result = yield query.rowArgs(opts, values);
+      if (result.length !== 1) throw new Error(`SQL: Expected exactly one column but ${ result.length } returned`);
+      return result[0];
+    });
+
+    return function (_x4, _x5) {
+      return _ref3.apply(this, arguments);
+    };
+  })();
+
+  query.inTransaction = false;
+
+  query.startTransaction = () =&gt; {
+    query.inTransaction = true;
+    return query.query('BEGIN');
+  };
+
+  query.commit = () =&gt; {
+    query.inTransaction = false;
+    return query.query('COMMIT');
+  };
+
+  query.rollback = () =&gt; {
+    query.inTransaction = false;
+    return _queryArgs('ROLLBACK', []);
+  };
+
+  query._end = () =&gt; {
+    const queryArgs = _queryArgs;
+    _queryArgs = () =&gt; {
+      throw new Error('Client was released.');
+    };
+    return new _bluebird2.default(resolve =&gt; {
+      if (inQuery) throw new Error('Client shutting down but query is pending. ' + 'Do you forget `await`?');
+
+      if (query.inTra ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _sql = require('./sql');
+
+var _sql2 = _interopRequireDefault(_sql);
+
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new _bluebird2.<span class="apidocCodeKeywordSpan
+">default</span>(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; }
+catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return _bluebird2.default.resolve(value).then
+(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next
+"); }); }; }
+
+const makeAsyncApi = client =&gt; {
+
+let inQuery = false;
+
+function query(sql) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pg-async.sql" id="apidoc.module.pg-async.sql">module pg-async.sql</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.SqlFragment" id="apidoc.element.pg-async.sql.SqlFragment">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>SqlFragment
+        <span class="apidocSignatureSpan">(templateParts, templateValues)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SqlFragment {
+
+  // SQL`insert into $quote${tableName} $values${keyValue}`;
+  constructor(templateParts, templateValues) {
+    this._parts = [];
+    this.values = [];
+
+    const length = templateValues.length;
+    const text = [];
+    let currentFragment = [];
+    let argIndex = 1;
+
+    let i = 0;
+
+    const addText = str =&gt; {
+      currentFragment.push(str);
+    };
+
+    const flushText = () =&gt; {
+      const fragment = currentFragment.join('');
+      currentFragment = [];
+      this._parts.push(fragment);
+      text.push(fragment);
+    };
+
+    const addValue = value =&gt; {
+      flushText();
+      this.values.push(value);
+      text.push('$', argIndex++);
+    };
+
+    while (i &lt; length) {
+      const parts = templateParts[i].split('$');
+      let value = templateValues.shift();
+      if (typeof value === 'undefined') throw new Error(`Expected something, but got undefined. ` + `Value after SQL fragment: ${
+text.join('') }${ templateParts[i] }`);
+
+      while (parts.length &gt; 1) value = SQL.transform(parts.pop(), value);
+
+      addText(parts[0]);
+
+      if (value &amp;&amp; value.toSQL) value = value.toSQL();
+
+      if (value instanceof SqlFragment) {
+        const nestedValuesLength = value.values.length;
+        let valueIndex = 0;
+        while (valueIndex &lt; nestedValuesLength) {
+          addText(value._parts[valueIndex]);
+          addValue(value.values[valueIndex]);
+          valueIndex++;
+        }
+        addText(value._parts[valueIndex]);
+      } else {
+        addValue(value);
+      }
+      i++;
+    }
+    // last part is alone, without value
+    addText(templateParts[i]);
+    flushText();
+
+    this.text = text.join('');
+  }
+
+  // this is for log/debugging only
+  toString() {
+    if (this._asString) return this._asString;
+
+    const text = [];
+    const length = this.values.length;
+    let i = 0;
+    while (i &lt; length) {
+      text.push(this._parts[i]);
+      const value = literal(this.values[i]);
+      text.push(value);
+      i++;
+    }
+    text.push(this._parts[i]);
+    this._asString = text.join('');
+    return this._asString;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.default" id="apidoc.element.pg-async.sql.default">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>default
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SQL(parts) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  // eslint-disable-line prefer-const
+  // only one argument, called manually
+  if (!Array.isArray(parts) &amp;&amp; values.length === 0) {
+    if (parts instanceof SqlFragment) return parts;
+
+    parts = [parts];
+  }
+
+  return new SqlFragment(parts, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var _sql = require('./sql');
+
+var _sql2 = _interopRequireDefault(_sql);
+
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new _bluebird2.<span class="apidocCodeKeywordSpan
+">default</span>(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; }
+catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return _bluebird2.default.resolve(value).then
+(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next
+"); }); }; }
+
+const makeAsyncApi = client =&gt; {
+
+let inQuery = false;
+
+function query(sql) {
+  for (var _len = arguments.length, values = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.escapeIdentifier" id="apidoc.element.pg-async.sql.escapeIdentifier">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>escapeIdentifier
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeIdentifier = function (str) {
+
+  var escaped = '"';
+
+  for(var i = 0; i &lt; str.length; i++) {
+    var c = str[i];
+    if(c === '"') {
+      escaped += c + c;
+    } else {
+      escaped += c;
+    }
+  }
+
+  escaped += '"';
+
+  return escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.escapeLiteral" id="apidoc.element.pg-async.sql.escapeLiteral">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>escapeLiteral
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeLiteral = function (str) {
+
+  var hasBackslash = false;
+  var escaped = '\'';
+
+  for(var i = 0; i &lt; str.length; i++) {
+    var c = str[i];
+    if(c === '\'') {
+      escaped += c + c;
+    } else if (c === '\\') {
+      escaped += c + c;
+      hasBackslash = true;
+    } else {
+      escaped += c;
+    }
+  }
+
+  escaped += '\'';
+
+  if(hasBackslash === true) {
+    escaped = ' E' + escaped;
+  }
+
+  return escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.identifier" id="apidoc.element.pg-async.sql.identifier">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>identifier
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function identifier(name) {
+  if (!name) throw new Error(`Expected nonempty string, got ${ (0, _util.inspect)(name) }`);
+
+  return SQL(escapeIdentifier(name));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.insert_object" id="apidoc.element.pg-async.sql.insert_object">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>insert_object
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function insert_object(data) {
+  const keys = Object.keys(data);
+  const length = keys.length;
+  const sqlFragments = new Array(length);
+  const values = new Array(length - 1);
+  const sb = [];
+
+  sb.push('(');
+  let i = 0;
+  while (i &lt; length) {
+    const column = keys[i];
+    values[i] = data[column];
+    i++;
+    sb.push(escapeIdentifier(column), ',');
+    sqlFragments[i] = ',';
+  }
+  sb[sb.length - 1] = ') VALUES (';
+  sqlFragments[0] = sb.join('');
+  sqlFragments[i] = ')';
+
+  return new SqlFragment(sqlFragments, values);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.literal" id="apidoc.element.pg-async.sql.literal">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>literal
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function literal(value) {
+  if (value instanceof SqlFragment) return value;
+
+  if (typeof value === 'undefined') throw new Error(`Expected something, but got undefined.`);
+
+  if (value === null) return SQL.NULL;
+
+  if (value.toPostgres) return SQL(escapeLiteral(value.toPostgres(_utils.prepareValue)));
+
+  if (value.toSQL) return SQL(value.toSQL());
+
+  return SQL(escapeLiteral(value.toString()));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pg-async.sql.sqlStr" id="apidoc.element.pg-async.sql.sqlStr">
+        function <span class="apidocSignatureSpan">pg-async.sql.</span>sqlStr
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sqlStr(str) {
+  if (typeof str !== 'string') throw new Error(`Expected string, got ${ (0, _util.inspect)(str) }`);
+
+  return SQL(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
